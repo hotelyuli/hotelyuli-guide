@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Yuli – Guest Guide QR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: #FAF6F3;
+      color: #4D333E;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(77, 51, 62, 0.1);
+      padding: 40px 36px;
+      max-width: 620px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .hotel-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #4D333E;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #C97B77;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 36px;
+    }
+
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: #C97B77;
+      border-radius: 2px;
+      margin: 0 auto 36px;
+    }
+
+    .qr-row {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .qr-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .qr-box {
+      padding: 14px;
+      border: 2px solid #C97B77;
+      border-radius: 12px;
+      background: #fff;
+      display: inline-block;
+    }
+
+    /* QRCode.js renders a canvas or img inside — make it square */
+    .qr-box canvas,
+    .qr-box img {
+      display: block;
+    }
+
+    .qr-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #4D333E;
+    }
+
+    .qr-url {
+      font-size: 0.72rem;
+      color: #C97B77;
+      word-break: break-all;
+      max-width: 180px;
+      line-height: 1.4;
+    }
+
+    .note {
+      margin-top: 36px;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #888;
+      letter-spacing: 0.02em;
+    }
+
+    @media print {
+      body { background: #fff; padding: 20px; }
+      .card { box-shadow: none; border: 1px solid #ddd; }
+    }
+
+    @media (max-width: 480px) {
+      .qr-row { gap: 32px; }
+      .card { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="hotel-name">Hotel Yuli</div>
+    <div class="subtitle">Guest Guide</div>
+    <div class="divider"></div>
+
+    <div class="qr-row">
+      <div class="qr-item">
+        <div class="qr-box" id="qr-en"></div>
+        <div class="qr-label">English</div>
+        <div class="qr-url">index.html</div>
+      </div>
+      <div class="qr-item">
+        <div class="qr-box" id="qr-es"></div>
+        <div class="qr-label">Español</div>
+        <div class="qr-url">index-es.html</div>
+      </div>
+    </div>
+
+    <div class="note">Scan to open the Hotel Yuli Guest Guide on your phone</div>
+  </div>
+
+  <script>
+    new QRCode(document.getElementById('qr-en'), {
+      text: 'https://dynamic-madeleine-a50afc.netlify.app/index.html',
+      width: 180,
+      height: 180,
+      colorDark: '#4D333E',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.H
+    });
+
+    new QRCode(document.getElementById('qr-es'), {
+      text: 'https://dynamic-madeleine-a50afc.netlify.app/index-es.html',
+      width: 180,
+      height: 180,
+      colorDark: '#4D333E',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour de Snorkel en Isla del Caño</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FAF7F4;
+      color: #4D333E;
+      max-width: 480px;
+      margin: 0 auto;
+      padding-bottom: 180px;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      min-height: 380px;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 15, 20, 0.55);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px 24px 32px;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(255,255,255,0.18);
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .stats-bar {
+      display: flex;
+      gap: 10px;
+      padding: 16px 16px 0;
+    }
+
+    .stat-card {
+      flex: 1;
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px 8px;
+      text-align: center;
+      box-shadow: 0 1px 6px rgba(77,51,62,0.08);
+    }
+
+    .stat-icon {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #9E7B85;
+      margin-bottom: 3px;
+    }
+
+    .stat-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #4D333E;
+    }
+
+    .section {
+      padding: 28px 20px 0;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #C97B77;
+      margin-bottom: 14px;
+    }
+
+    .description {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 15px;
+      text-align: center;
+      color: #4D333E;
+      line-height: 1.75;
+      padding: 28px 24px 0;
+    }
+
+    .nature-photo {
+      padding: 24px 20px 0;
+    }
+
+    .nature-photo img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .schedule-list {
+      list-style: none;
+    }
+
+    .schedule-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(77,51,62,0.1);
+    }
+
+    .schedule-item:first-child {
+      border-top: 1px solid rgba(77,51,62,0.1);
+    }
+
+    .schedule-time-label {
+      font-size: 13px;
+      font-weight: 400;
+      color: #4D333E;
+    }
+
+    .schedule-time {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #4D333E;
+      text-align: right;
+    }
+
+    .inclusions-list {
+      list-style: none;
+    }
+
+    .inclusions-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      line-height: 1.6;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(77,51,62,0.07);
+      color: #4D333E;
+    }
+
+    .inclusions-list li:last-child { border-bottom: none; }
+
+    .bullet {
+      color: #C97B77;
+      font-size: 16px;
+      line-height: 1.4;
+      flex-shrink: 0;
+    }
+
+    .inclusion-title {
+      font-weight: 500;
+    }
+
+    .gear-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .gear-tag {
+      background: #F0EAE4;
+      color: #4D333E;
+      font-size: 12px;
+      font-weight: 400;
+      padding: 7px 14px;
+      border-radius: 999px;
+    }
+
+    .note-box {
+      margin: 20px 20px 0;
+      background: #F0EAE4;
+      border-left: 3px solid #C97B77;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #4D333E;
+    }
+
+    .wildlife-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .wildlife-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .wildlife-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+      filter: none;
+    }
+
+    .wildlife-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(30,15,20,0.55);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 8px 4px;
+    }
+
+    .pricing-footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
+      background: #4D333E;
+      padding: 16px 20px 20px;
+      z-index: 100;
+    }
+
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .price-block { text-align: left; }
+
+    .price-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2px;
+    }
+
+    .price-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .contact-item {
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .book-btn {
+      display: block;
+      width: 100%;
+      background: #C97B77;
+      color: #fff;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      padding: 14px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="cano-hero.jpg" alt="Tour de Snorkel en Isla del Caño">
+    <div class="hero-overlay">
+      <a class="back-btn" href="index-es.html">&#8592;</a>
+      <div class="hero-label">Momentos Curados</div>
+      <h1 class="hero-title">Tour de Snorkel en Isla del Caño</h1>
+      <p class="hero-subtitle">Date Más.</p>
+    </div>
+  </div>
+
+  <!-- QUICK STATS -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-icon">⏱</div>
+      <div class="stat-label">Duración</div>
+      <div class="stat-value">~7 Horas</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🚢</div>
+      <div class="stat-label">Salida</div>
+      <div class="stat-value">6:30 AM</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🌍</div>
+      <div class="stat-label">Idioma</div>
+      <div class="stat-value">Bilingüe</div>
+    </div>
+  </div>
+
+  <!-- DESCRIPTION -->
+  <p class="description">
+    Isla del Caño es el segundo mejor destino de snorkel en Costa Rica. Este tour consiste en alrededor de 3 horas de snorkel donde encontrarás cardúmenes de peces, rayas, tortugas, hermosos corales y tiburones de punta blanca. Aprox. 1.5 horas en bote de ida.
+  </p>
+
+  <!-- SNORKEL IMAGE -->
+  <div style="padding: 0 20px;">
+    <img src="cano-snorkel.jpg" style="width:100%;border-radius:16px;margin:20px 0 0;object-fit:cover;max-height:280px;">
+  </div>
+
+  <!-- AERIAL IMAGE -->
+  <div style="padding: 16px 20px 0;">
+    <img src="cano-island-aerial.jpg" alt="Vista Aérea Isla del Caño" style="width:100%;border-radius:14px;display:block;height:220px;object-fit:cover;" onerror="this.style.display='none';this.parentElement.style.display='none';">
+  </div>
+
+  <!-- EL HORARIO -->
+  <div class="section">
+    <div class="section-label">El Horario</div>
+    <ul class="schedule-list">
+      <li class="schedule-item">
+        <span class="schedule-time-label">Encuentro</span>
+        <span class="schedule-time">6:30 AM</span>
+      </li>
+      <li class="schedule-item">
+        <span class="schedule-time-label">Salida</span>
+        <span class="schedule-time">7:00 AM</span>
+      </li>
+      <li class="schedule-item">
+        <span class="schedule-time-label">Regreso</span>
+        <span class="schedule-time">1:30 – 2:00 PM</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- INCLUIDO EN EL TOUR -->
+  <div class="section">
+    <div class="section-label">Incluido en el Tour</div>
+    <ul class="inclusions-list">
+      <li>
+        <span class="bullet">•</span>
+        <span><span class="inclusion-title">Entrada a la Reserva Biológica</span> — Acceso a la Reserva Biológica Isla del Caño incluido.</span>
+      </li>
+      <li>
+        <span class="bullet">•</span>
+        <span><span class="inclusion-title">2 Sesiones de Snorkel</span> — Más visita a la isla.</span>
+      </li>
+      <li>
+        <span class="bullet">•</span>
+        <span><span class="inclusion-title">Guía Bilingüe</span> — Guía naturalista certificado en inglés y español.</span>
+      </li>
+      <li>
+        <span class="bullet">•</span>
+        <span><span class="inclusion-title">Aperitivos</span> — Antes de la salida para empezar bien el día.</span>
+      </li>
+      <li>
+        <span class="bullet">•</span>
+        <span><span class="inclusion-title">Catering Completo</span> — Agua, frutas tropicales, galletas y almuerzo completo con refrescos.</span>
+      </li>
+      <li>
+        <span class="bullet">•</span>
+        <span><span class="inclusion-title">Equipo de Seguridad</span> — Equipo de snorkel, tripulación, botiquín y seguro.</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- EQUIPO ESENCIAL -->
+  <div class="section">
+    <div class="section-label">Equipo Esencial</div>
+    <div class="gear-grid">
+      <span class="gear-tag">👕 Ropa Cómoda</span>
+      <span class="gear-tag">🩱 Traje de Baño</span>
+      <span class="gear-tag">🥿 Zapatos de Agua</span>
+      <span class="gear-tag">💧 Botella Reutilizable</span>
+      <span class="gear-tag">👜 Bolsa Impermeable</span>
+      <span class="gear-tag">🧴 Protector Solar Natural</span>
+    </div>
+  </div>
+
+  <!-- NOTE -->
+  <div class="note-box">
+    🌊 Por favor usa protector solar natural o mangas largas para proteger los corales de la Reserva Biológica Isla del Caño.
+  </div>
+
+  <!-- ENCUENTROS CON LA FAUNA -->
+  <div class="section" style="padding-bottom: 28px;">
+    <div class="section-label">Encuentros con la Fauna</div>
+    <div class="wildlife-grid">
+      <div class="wildlife-item">
+        <img src="cano-turtle.jpg" alt="Tortuga Marina">
+        <div class="wildlife-label">Tortuga Marina</div>
+      </div>
+      <div class="wildlife-item">
+        <img src="cano-dolphins.jpg" alt="Delfines">
+        <div class="wildlife-label">Delfines</div>
+      </div>
+      <div class="wildlife-item">
+        <img src="cano-stingray.jpg" alt="Raya Águila">
+        <div class="wildlife-label">Raya Águila</div>
+      </div>
+      <div class="wildlife-item">
+        <img src="cano-fish.jpg" alt="Cardumen de Peces">
+        <div class="wildlife-label">Cardumen de Peces</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING FOOTER -->
+  <div class="pricing-footer">
+    <div class="pricing-row">
+      <div class="price-block">
+        <div class="price-label">Tarifa Adulto</div>
+        <div class="price-amount">$145</div>
+      </div>
+      <div class="price-block">
+        <div class="price-label">Niño (4–9)</div>
+        <div class="price-amount">$95</div>
+      </div>
+    </div>
+    <div class="contact-row">
+      <span class="contact-item">📧 recepcion@hotelyuli.com</span>
+      <span class="contact-item">📱 +506 8973-4133</span>
+    </div>
+    <a class="book-btn" href="https://wa.me/50689734133?text=Hola!%20Me%20gustar%C3%ADa%20reservar%20el%20Tour%20de%20Snorkel%20en%20Isla%20del%20Ca%C3%B1o" target="_blank">
+      RESERVAR AHORA
+    </a>
+  </div>
+
+</body>
+</html>

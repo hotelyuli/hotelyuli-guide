@@ -407,6 +407,31 @@
       line-height: 1.55;
     }
 
+    /* ── ACTIVITY CARD PHOTO VARIANT ── */
+    .activity-card--photo {
+      background-size: cover !important;
+      background-position: center !important;
+      border: none;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .activity-card--photo .activity-title {
+      color: #fff;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.7);
+    }
+    .activity-card--photo .activity-price {
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .activity-card--photo .activity-desc {
+      color: rgba(255,255,255,0.88);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    }
+
     /* ── RESTAURANT PROMO BOX ── */
     .resto-promo {
       background: var(--wine);
@@ -941,7 +966,7 @@
 
 
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/whale-hero.jpg') center/cover;">
         <div class="activity-head">
           <div class="activity-title">🐋 Whale Watching</div>
         </div>
@@ -950,7 +975,7 @@
         <a href="whale-watching.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/cano-hero.jpg') center/cover;">
         <div class="activity-head">
           <div class="activity-title">🤿 Isla del Caño Snorkeling</div>
         </div>
@@ -959,25 +984,25 @@
         <a href="cano-snorkeling.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/corcovado-hero.jpg') center/cover;">
         <div class="activity-head">
           <div class="activity-title">🌳 Corcovado Hike</div>
         </div>
         <span class="activity-price">Adults $145 · Kids $95</span>
-        <div class="activity-desc">San Pedrillo Station. Tapirs, monkeys &amp; even pumas can be spotted. Departs 6:30 AM. Guide &amp; lunch included. Note: Please bring a reusable water bottle — disposable bottles are not allowed.</div>
+        <div class="activity-desc">San Pedrillo Station. Tapirs, monkeys &amp; even pumas can be spotted. Departs 6:30 AM. Guide &amp; lunch included.</div>
         <a href="corcovado.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/Wildlife-hero.jpg') center/cover;">
         <div class="activity-head">
           <div class="activity-title">🦥 Wildlife Tour</div>
         </div>
         <span class="activity-price">From $77</span>
-        <div class="activity-desc">2–3 hours · Guided jungle trail spotting scarlet macaws, poison dart frogs, monkeys &amp; more. Bilingual naturalist guide. Binoculars &amp; refreshments included.</div>
+        <div class="activity-desc">2–3 hours · Guided jungle trail spotting scarlet macaws, poison dart frogs, monkeys &amp; more. Binoculars &amp; refreshments included.</div>
         <a href="wildlife-tour.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/Night-hero.jpg') center/cover;">
         <div class="activity-head">
           <div class="activity-title">🌙 Night Walk</div>
         </div>
@@ -986,103 +1011,112 @@
         <a href="night-walk.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/surf-hero.jpg') center/cover;">
         <div class="activity-head">
           <div class="activity-title">🏄 Surf Classes</div>
         </div>
         <span class="activity-price">$85 / person</span>
         <div class="activity-desc">~2 hours · Certified instructors. Board, snack, water &amp; chair included.</div>
+        <a href="surf.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/Nauyaca-hero2.jpg') center/cover;">
         <div class="activity-head">
           <div class="activity-title">💦 Nauyaca Waterfalls</div>
         </div>
-        <span class="activity-price">From $10–$32</span>
-        <div class="activity-desc">Just 35 minutes away, one of Costa Rica's most breathtaking waterfalls. The Barucito River flows through lush jungle into powerful cascading falls. 11 km hike $10 · or 20 min 4x4 $32 · Mon–Sat · 7:00 AM – 3:00 PM · Last entrance: 1:00 PM</div>
+        <span class="activity-price">From $10</span>
+        <div class="activity-desc">11 km hike or 20 min 4x4 · Mon–Sat · One of Costa Rica's most breathtaking waterfalls.</div>
+        <a href="nauyaca.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/UvitaWater-hero.JPG') center/cover;">
         <div class="activity-head">
           <div class="activity-title">🌊 Uvita Waterfall</div>
         </div>
-        <span class="activity-price">4.5 km</span>
-        <div class="activity-desc">Beautiful swimming hole in the rainforest. Open all year round.</div>
+        <span class="activity-price">$4 / person</span>
+        <div class="activity-desc">Beautiful swimming hole in the rainforest. Open year-round.</div>
+        <a href="uvita-waterfall.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/El-Pavon.JPG') center/cover;">
         <div class="activity-head">
           <div class="activity-title">🏞️ El Pavon Waterfall</div>
         </div>
-        <span class="activity-price">Free · 22 km</span>
-        <div class="activity-desc">Peaceful rainforest waterfall. Worth the drive.</div>
+        <span class="activity-price">Free</span>
+        <div class="activity-desc">Hidden jungle gem. Peaceful rainforest waterfall worth the drive.</div>
+        <a href="el-pavon.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/boruca-hero.jpg') center/cover;">
         <div class="activity-head">
-          <div class="activity-title">🎭🎭 Boruca Cultural Experience</div>
+          <div class="activity-title">🎭 Boruca Cultural Experience</div>
         </div>
         <span class="activity-price">From $140 · Full Day</span>
-        <div class="activity-desc">Discover Costa Rica's rich indigenous roots. Witness hand-carved ceremonial masks and enjoy a traditional lunch.</div>
-        <a href="boruca" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
+        <div class="activity-desc">Discover Costa Rica's rich indigenous roots. Hand-carved ceremonial masks &amp; traditional lunch.</div>
+        <a href="boruca.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/Kayaking-hero.jpg') center/cover;">
         <div class="activity-head">
-          <div class="activity-title">🚣 Kayaking</div>
+          <div class="activity-title">🛶 Kayaking</div>
         </div>
         <span class="activity-price">Ask at reception</span>
         <div class="activity-desc">Ocean &amp; river options. Caves, snorkeling &amp; mangroves. All gear included.</div>
+        <a href="kayaking.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      
-      
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/Zipline-hero.JPG') center/cover;">
         <div class="activity-head">
           <div class="activity-title">🪂 Zipline</div>
         </div>
-        <span class="activity-price">From $80</span>
-        <div class="activity-desc">Santuario Zipline. Lunch &amp; guides included.</div>
+        <span class="activity-price">$90 / person</span>
+        <div class="activity-desc">2–3 hours · 11 platforms · Santuario Zipline. Lunch &amp; guides included.</div>
+        <a href="zipline.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/ATV-hero.jpg') center/cover;">
         <div class="activity-head">
           <div class="activity-title">🏍️ ATV / UTV</div>
         </div>
         <span class="activity-price">From $120</span>
-        <div class="activity-desc">Daily 8:00 AM–5:00 PM. Off-road trails through the jungle.</div>
+        <div class="activity-desc">4–5 hours · Off-road jungle trails. Includes coffee tour.</div>
+        <a href="atv.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/scuba-hero.jpg') center/cover;">
         <div class="activity-head">
           <div class="activity-title">🤿 Scuba – Isla del Caño</div>
         </div>
         <span class="activity-price">$250</span>
         <div class="activity-desc">No certification needed. Explore the Pacific marine reserve.</div>
+        <a href="scuba-cano.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/scuba-marino-hero.jpg') center/cover;">
         <div class="activity-head">
           <div class="activity-title">🤿 Scuba – Marino Ballena</div>
         </div>
         <span class="activity-price">$165</span>
-        <div class="activity-desc">No certification needed. Dive inside the National Park.</div>
+        <div class="activity-desc">4 hours · 2 guided dives · No certification needed. Dive inside the National Park.</div>
+        <a href="scuba-ballena.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/Mangroves-hero.jpg') center/cover;">
         <div class="activity-head">
           <div class="activity-title">🌿 Mangroves Tour</div>
         </div>
-        <span class="activity-price">Min. 4 people</span>
-        <div class="activity-desc">Sierpe River. Macaws, monkeys &amp; crocodiles in their natural habitat.</div>
+        <span class="activity-price">From $55 · Min. 4 pax</span>
+        <div class="activity-desc">Sierpe River · Macaws, monkeys &amp; crocodiles in their natural habitat.</div>
+        <a href="mangroves.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
 
-      <div class="activity-card">
+      <div class="activity-card activity-card--photo" style="background: linear-gradient(rgba(30,15,20,0.5), rgba(30,15,20,0.65)), url('Experiences/horse-hero.jpg') center/cover;">
         <div class="activity-head">
           <div class="activity-title">🐴 Horse Ride</div>
         </div>
-        <span class="activity-price">Min. 2 people</span>
-        <div class="activity-desc">~3 hours through forest, beach, river or waterfall trails.</div>
+        <span class="activity-price">$65 / person</span>
+        <div class="activity-desc">~3 hours · Beach, forest or waterfall trails.</div>
+        <a href="horse-ride.html" style="display:inline-block;margin-top:8px;background:#C97B77;color:white;padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;font-weight:500;">View Details →</a>
       </div>
     </div>
   </div>

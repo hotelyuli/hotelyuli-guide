@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clases de Surf</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #FAF7F4; color: #4D333E; max-width: 480px; margin: 0 auto; padding-bottom: 180px; }
+    .hero { position: relative; width: 100%; height: 70vh; min-height: 380px; overflow: hidden; }
+    .hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-overlay { position: absolute; inset: 0; background: rgba(30,15,20,0.55); display: flex; flex-direction: column; justify-content: flex-end; padding: 28px 24px 32px; }
+    .back-btn { position: absolute; top: 20px; left: 20px; background: rgba(255,255,255,0.18); border: none; color: #fff; font-size: 20px; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; backdrop-filter: blur(4px); }
+    .hero-label { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 2.5px; color: rgba(255,255,255,0.75); text-transform: uppercase; margin-bottom: 8px; }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 600; color: #fff; line-height: 1.15; margin-bottom: 10px; }
+    .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: rgba(255,255,255,0.85); }
+    .stats-bar { display: flex; gap: 10px; padding: 16px 16px 0; }
+    .stat-card { flex: 1; background: #fff; border-radius: 10px; padding: 12px 8px; text-align: center; box-shadow: 0 1px 6px rgba(77,51,62,0.08); }
+    .stat-icon { font-size: 18px; margin-bottom: 4px; }
+    .stat-label { font-size: 9px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #9E7B85; margin-bottom: 3px; }
+    .stat-value { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: #4D333E; }
+    .section { padding: 28px 20px 0; }
+    .section-label { font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #C97B77; margin-bottom: 14px; }
+    .description { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; text-align: center; color: #4D333E; line-height: 1.75; padding: 28px 24px 0; }
+    .nature-photo { padding: 24px 20px 0; }
+    .nature-photo img { width: 100%; border-radius: 14px; display: block; height: 220px; object-fit: cover; }
+    .schedule-list { list-style: none; }
+    .schedule-item { display: flex; justify-content: space-between; align-items: center; padding: 13px 0; border-bottom: 1px solid rgba(77,51,62,0.1); }
+    .schedule-item:first-child { border-top: 1px solid rgba(77,51,62,0.1); }
+    .schedule-time-label { font-size: 13px; font-weight: 400; color: #4D333E; }
+    .schedule-time { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 600; color: #4D333E; text-align: right; }
+    .inclusions-list { list-style: none; }
+    .inclusions-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; padding: 7px 0; border-bottom: 1px solid rgba(77,51,62,0.07); color: #4D333E; }
+    .inclusions-list li:last-child { border-bottom: none; }
+    .bullet { color: #C97B77; font-size: 16px; line-height: 1.4; flex-shrink: 0; }
+    .inclusion-title { font-weight: 500; }
+    .gear-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+    .gear-tag { background: #F0EAE4; color: #4D333E; font-size: 12px; font-weight: 400; padding: 7px 14px; border-radius: 999px; }
+    .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .photo-item { border-radius: 12px; overflow: hidden; }
+    .photo-item img { width: 100%; height: 160px; object-fit: cover; display: block; }
+    .note-box { margin: 28px 20px 0; background: #FFF5F0; border-left: 3px solid #C97B77; border-radius: 8px; padding: 14px 16px; font-size: 13px; color: #4D333E; line-height: 1.6; }
+    .pricing-footer { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px; background: #4D333E; padding: 16px 20px 20px; z-index: 100; }
+    .pricing-row { display: flex; justify-content: space-between; margin-bottom: 10px; }
+    .price-block { text-align: left; }
+    .price-label { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 2px; }
+    .price-amount { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: #fff; }
+    .contact-row { display: flex; gap: 16px; margin-bottom: 12px; }
+    .contact-item { font-size: 11px; color: rgba(255,255,255,0.7); }
+    .book-btn { display: block; width: 100%; background: #C97B77; color: #fff; text-align: center; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; padding: 14px; border-radius: 8px; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <img src="Experiences/surf-hero.jpg" alt="Clases de Surf">
+    <div class="hero-overlay">
+      <a class="back-btn" href="index-es.html">&#8592;</a>
+      <div class="hero-label">Momentos Únicos</div>
+      <h1 class="hero-title">Clases de Surf</h1>
+      <p class="hero-subtitle">Date más a ti mismo.</p>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-icon">⏱</div>
+      <div class="stat-label">Duración</div>
+      <div class="stat-value">~2 Horas</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🏄</div>
+      <div class="stat-label">Nivel</div>
+      <div class="stat-value">Todos los Niveles</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">👥</div>
+      <div class="stat-label">Grupos</div>
+      <div class="stat-value">Grupos Pequeños</div>
+    </div>
+  </div>
+
+  <p class="description">
+    Las playas alrededor de Uvita ofrecen condiciones ideales para principiantes. Atrapa tu primera ola con instructores certificados que hacen la experiencia segura, divertida e inolvidable.
+  </p>
+
+  <div class="nature-photo">
+    <img src="Experiences/surf-1.jpg" alt="Surf en Uvita">
+  </div>
+
+  <div class="section">
+    <div class="section-label">El Horario</div>
+    <ul class="schedule-list">
+      <li class="schedule-item">
+        <span class="schedule-time-label">Salidas</span>
+        <span class="schedule-time">Flexible Diario</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Qué Incluye</div>
+    <ul class="inclusions-list">
+      <li>
+        <span class="bullet">•</span>
+        <span><span class="inclusion-title">Instructor Certificado</span> — Entrenamiento profesional de surf de principio a fin.</span>
+      </li>
+      <li>
+        <span class="bullet">•</span>
+        <span><span class="inclusion-title">Tabla de Surf</span> — Tabla apta para principiantes incluida.</span>
+      </li>
+      <li>
+        <span class="bullet">•</span>
+        <span><span class="inclusion-title">Snack, Agua y Silla de Playa</span> — Todo lo que necesitas para una sesión perfecta.</span>
+      </li>
+      <li>
+        <span class="bullet">•</span>
+        <span><span class="inclusion-title">Instrucciones de Seguridad</span> — Seguridad en el océano y técnica antes de entrar al agua.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Equipo Esencial</div>
+    <div class="gear-grid">
+      <span class="gear-tag">🩱 Traje de Baño</span>
+      <span class="gear-tag">🧴 Protector Solar</span>
+      <span class="gear-tag">👟 Zapatos de Agua</span>
+    </div>
+  </div>
+
+  <div class="section" style="padding-bottom: 28px;">
+    <div class="section-label">En las Olas</div>
+    <div class="photo-grid">
+      <div class="photo-item"><img src="Experiences/surf-1.jpg" alt="Surf"></div>
+      <div class="photo-item"><img src="Experiences/surf-2.jpg" alt="Surf"></div>
+      <div class="photo-item"><img src="Experiences/surf-3.jpg" alt="Surf"></div>
+      <div class="photo-item"><img src="Experiences/surf-4.jpg" alt="Surf"></div>
+      <div class="photo-item"><img src="Experiences/surf-5.jpg" alt="Surf"></div>
+      <div class="photo-item"><img src="Experiences/surf-6.jpg" alt="Surf"></div>
+      <div class="photo-item"><img src="Experiences/surf-7.jpg" alt="Surf"></div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    🏄 Sin experiencia necesaria — nuestros instructores te harán surfear desde la primera lección.
+  </div>
+
+  <div class="pricing-footer">
+    <div class="pricing-row">
+      <div class="price-block">
+        <div class="price-label">Por Persona</div>
+        <div class="price-amount">$85</div>
+      </div>
+    </div>
+    <div class="contact-row">
+      <span class="contact-item">📧 recepcion@hotelyuli.com</span>
+      <span class="contact-item">📱 +506 8973-4133</span>
+    </div>
+    <a class="book-btn" href="https://wa.me/50689734133?text=Hola!%20Me%20gustar%C3%ADa%20reservar%20Clases%20de%20Surf" target="_blank">RESERVAR AHORA</a>
+  </div>
+
+</body>
+</html>

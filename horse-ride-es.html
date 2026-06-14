@@ -38,6 +38,10 @@
     .gear-grid { display: flex; flex-wrap: wrap; gap: 8px; }
     .gear-tag { background: #F0EAE4; color: #4D333E; font-size: 12px; font-weight: 400; padding: 7px 14px; border-radius: 999px; }
     .note-box { margin: 28px 20px 0; background: #FFF5F0; border-left: 3px solid #C97B77; border-radius: 8px; padding: 14px 16px; font-size: 13px; color: #4D333E; line-height: 1.6; }
+    .note-box-header { font-weight: 600; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #C97B77; margin-top: 14px; margin-bottom: 4px; }
+    .note-box-header:first-child { margin-top: 0; }
+    .note-box ul { list-style: none; padding: 0; }
+    .note-box ul li { padding: 1px 0; }
     .pricing-footer { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px; background: #4D333E; padding: 16px 20px 20px; z-index: 100; }
     .pricing-row { display: flex; justify-content: space-between; margin-bottom: 10px; }
     .price-block { text-align: left; }
@@ -51,7 +55,7 @@
 <body>
 
   <div class="hero">
-    <img src="Experiences/horse-hero.jpg" alt="Cabalgata">
+    <img src="Experiences/Horse-hero.jpg" alt="Cabalgata">
     <div class="hero-overlay">
       <a class="back-btn" href="index-es.html">&#8592;</a>
       <div class="hero-label">Momentos Únicos</div>
@@ -62,85 +66,110 @@
 
   <div class="stats-bar">
     <div class="stat-card">
+      <div class="stat-icon">💰</div>
+      <div class="stat-label">Por Persona</div>
+      <div class="stat-value">$70</div>
+    </div>
+    <div class="stat-card">
       <div class="stat-icon">⏱</div>
       <div class="stat-label">Duración</div>
       <div class="stat-value">~3 Horas</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">🐴</div>
-      <div class="stat-label">Senderos</div>
-      <div class="stat-value">Playa y Selva</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon">👥</div>
-      <div class="stat-label">Grupo</div>
-      <div class="stat-value">Mín. 2 personas</div>
+      <div class="stat-icon">🕘</div>
+      <div class="stat-label">Salidas</div>
+      <div class="stat-value">9 AM / 2 PM</div>
     </div>
   </div>
 
   <p class="description">
-    Explora la selva tropical a caballo — acércate silenciosamente a la fauna, cabalga hasta playas apartadas o descubre cascadas ocultas en senderos que pocos turistas conocen.
+    Tanto jinetes experimentados como principiantes disfrutarán de la cabalgata. Nuestros caballos están cuidadosamente entrenados para brindarte una experiencia agradable mientras recorres el refugio — entre el bosque, en la playa o en el río. Visita Playa Hermosa junto al Parque Nacional Marino Ballena, cabalga por el bosque hasta una catarata y date un chapuzón, o disfruta de un atardecer impresionante a caballo.
   </p>
 
-  <div class="nature-photo">
-    <img src="Experiences/horse-hero.jpg" alt="Cabalgata en Costa Rica">
-  </div>
-
   <div class="section">
-    <div class="section-label">El Horario</div>
-    <ul class="schedule-list">
-      <li class="schedule-item">
-        <span class="schedule-time-label">Salidas</span>
-        <span class="schedule-time">Flexible Diario</span>
-      </li>
-      <li class="schedule-item">
-        <span class="schedule-time-label">Tour al Atardecer</span>
-        <span class="schedule-time">Disponible</span>
-      </li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <div class="section-label">Tus Opciones</div>
+    <div class="section-label">Opciones de Tour</div>
     <ul class="inclusions-list">
       <li>
-        <span class="bullet">•</span>
-        <span><span class="inclusion-title">Tour en Playa</span> — Cabalga por la costa pacífica apartada.</span>
+        <span class="bullet">🌲</span>
+        <span><span class="inclusion-title">Paseo por el Bosque y el Río</span> — Diario a las 9:00 AM y 2:00 PM</span>
       </li>
       <li>
-        <span class="bullet">•</span>
-        <span><span class="inclusion-title">Tour a la Catarata</span> — Por senderos en la selva hasta cascadas ocultas.</span>
+        <span class="bullet">🏖️</span>
+        <span><span class="inclusion-title">Paseo en la Playa</span> — Disponible según el horario de mareas. Consulta disponibilidad al reservar.</span>
       </li>
       <li>
-        <span class="bullet">•</span>
-        <span><span class="inclusion-title">Tour Romántico al Atardecer</span> — La hora dorada a caballo.</span>
-      </li>
-      <li>
-        <span class="bullet">•</span>
-        <span><span class="inclusion-title">Guía Local Experto</span> — Instrucciones de seguridad y guía durante todo el recorrido.</span>
+        <span class="bullet">🌅</span>
+        <span><span class="inclusion-title">Paseo al Atardecer</span> — Diario a las 4:00 PM en fechas donde la marea permite acceso a la playa.</span>
       </li>
     </ul>
+  </div>
+
+  <div class="nature-photo">
+    <img src="Experiences/Horse-1.jpg" alt="Cabalgata">
+  </div>
+  <div class="nature-photo">
+    <img src="Experiences/Horse-2.jpg" alt="Cabalgata">
+  </div>
+  <div class="nature-photo">
+    <img src="Experiences/Horse-3.jpg" alt="Cabalgata">
+  </div>
+  <div class="nature-photo">
+    <img src="Experiences/Horse-4.jpg" alt="Cabalgata">
+  </div>
+  <div class="nature-photo">
+    <img src="Experiences/Horse-5.jpg" alt="Cabalgata">
+  </div>
+  <div class="nature-photo">
+    <img src="Experiences/Horse-6.jpg" alt="Cabalgata">
+  </div>
+  <div class="nature-photo">
+    <img src="Experiences/Horse-7.jpg" alt="Cabalgata">
+  </div>
+  <div class="nature-photo">
+    <img src="Experiences/Horse-8.jpg" alt="Cabalgata">
   </div>
 
   <div class="section">
     <div class="section-label">Equipo Esencial</div>
     <div class="gear-grid">
-      <span class="gear-tag">👟 Zapatos Cerrados</span>
-      <span class="gear-tag">👖 Pantalón Largo</span>
-      <span class="gear-tag">🧴 Protector Solar</span>
       <span class="gear-tag">💧 Agua</span>
+      <span class="gear-tag">👖 Pantalón Largo (obligatorio)</span>
+      <span class="gear-tag">👟 Zapatos Cerrados — sin sandalias ni Crocs</span>
+      <span class="gear-tag">🧴 Protector Solar</span>
+      <span class="gear-tag">🦟 Repelente de Insectos</span>
     </div>
   </div>
 
   <div class="note-box" style="margin-bottom: 28px;">
-    🐴 Elige tu aventura — galope en la playa, sendero en la selva o atardecer romántico.
+    <div class="note-box-header">Antes del tour</div>
+    <ul>
+      <li>• No se permiten bolsos grandes ni mochilas.</li>
+      <li>• Evita ropa suelta, ponchos o bufandas — pueden asustar a los caballos.</li>
+      <li>• Llega 20 minutos antes para el registro e instrucciones.</li>
+    </ul>
+    <div class="note-box-header">Seguridad</div>
+    <ul>
+      <li>• Peso máximo: 230 lbs / 104 kg.</li>
+      <li>• No se permite el consumo de alcohol ni drogas.</li>
+      <li>• Infórmanos con anticipación sobre problemas de espalda, cirugías recientes, embarazo o miedo severo a los caballos.</li>
+    </ul>
+    <div class="note-box-header">Durante el tour</div>
+    <ul>
+      <li>• Los guías pueden ajustar el ritmo o separar grupos según el comportamiento de los caballos.</li>
+      <li>• Los teléfonos y pertenencias personales son tu responsabilidad.</li>
+      <li>• El tour se realiza con lluvia o sol, excepto en condiciones extremas.</li>
+    </ul>
+    <div class="note-box-header">Importante</div>
+    <ul>
+      <li>• Los participantes tardíos pueden perder el tour sin reembolso — el tour sale puntualmente.</li>
+    </ul>
   </div>
 
   <div class="pricing-footer">
     <div class="pricing-row">
       <div class="price-block">
         <div class="price-label">Por Persona</div>
-        <div class="price-amount">$65</div>
+        <div class="price-amount">$70</div>
       </div>
     </div>
     <div class="contact-row">

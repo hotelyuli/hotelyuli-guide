@@ -38,6 +38,10 @@
     .gear-grid { display: flex; flex-wrap: wrap; gap: 8px; }
     .gear-tag { background: #F0EAE4; color: #4D333E; font-size: 12px; font-weight: 400; padding: 7px 14px; border-radius: 999px; }
     .note-box { margin: 28px 20px 0; background: #FFF5F0; border-left: 3px solid #C97B77; border-radius: 8px; padding: 14px 16px; font-size: 13px; color: #4D333E; line-height: 1.6; }
+    .note-box-header { font-weight: 600; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #C97B77; margin-top: 14px; margin-bottom: 4px; }
+    .note-box-header:first-child { margin-top: 0; }
+    .note-box ul { list-style: none; padding: 0; }
+    .note-box ul li { padding: 1px 0; }
     .pricing-footer { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px; background: #4D333E; padding: 16px 20px 20px; z-index: 100; }
     .pricing-row { display: flex; justify-content: space-between; margin-bottom: 10px; }
     .price-block { text-align: left; }
@@ -51,7 +55,7 @@
 <body>
 
   <div class="hero">
-    <img src="Experiences/horse-hero.jpg" alt="Horse Ride">
+    <img src="Experiences/Horse-hero.jpg" alt="Horse Ride">
     <div class="hero-overlay">
       <a class="back-btn" href="index.html">&#8592;</a>
       <div class="hero-label">Curated Moments</div>
@@ -62,85 +66,110 @@
 
   <div class="stats-bar">
     <div class="stat-card">
+      <div class="stat-icon">💰</div>
+      <div class="stat-label">Per Person</div>
+      <div class="stat-value">$70</div>
+    </div>
+    <div class="stat-card">
       <div class="stat-icon">⏱</div>
       <div class="stat-label">Duration</div>
       <div class="stat-value">~3 Hours</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">🐴</div>
-      <div class="stat-label">Trails</div>
-      <div class="stat-value">Beach &amp; Forest</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon">👥</div>
-      <div class="stat-label">Group</div>
-      <div class="stat-value">Min. 2 people</div>
+      <div class="stat-icon">🕘</div>
+      <div class="stat-label">Departures</div>
+      <div class="stat-value">9 AM / 2 PM</div>
     </div>
   </div>
 
   <p class="description">
-    Explore the rainforest on horseback — approach wildlife quietly, ride to secluded beaches, or discover hidden waterfalls on trails few tourists ever reach.
+    Experienced and inexperienced riders will enjoy the horse ride. Our horses are carefully trained to give you a pleasant experience as you ride through the refuge — amidst the forest, on the beach, or in the river. Visit Playa Hermosa adjacent to Ballena Marine National Park, ride through the woods toward a waterfall and take a dip, or enjoy an astonishing sunset on horseback.
   </p>
 
-  <div class="nature-photo">
-    <img src="Experiences/horse-hero.jpg" alt="Horse Ride in Costa Rica">
-  </div>
-
   <div class="section">
-    <div class="section-label">The Schedule</div>
-    <ul class="schedule-list">
-      <li class="schedule-item">
-        <span class="schedule-time-label">Departures</span>
-        <span class="schedule-time">Flexible Daily</span>
-      </li>
-      <li class="schedule-item">
-        <span class="schedule-time-label">Sunset Tour</span>
-        <span class="schedule-time">Available</span>
-      </li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <div class="section-label">Your Options</div>
+    <div class="section-label">Tour Options</div>
     <ul class="inclusions-list">
       <li>
-        <span class="bullet">•</span>
-        <span><span class="inclusion-title">Beach Tour</span> — Ride along secluded Pacific coastline.</span>
+        <span class="bullet">🌲</span>
+        <span><span class="inclusion-title">Forest &amp; River Ride</span> — Daily at 9:00 AM and 2:00 PM</span>
       </li>
       <li>
-        <span class="bullet">•</span>
-        <span><span class="inclusion-title">Waterfall Tour</span> — Through jungle trails to hidden falls.</span>
+        <span class="bullet">🏖️</span>
+        <span><span class="inclusion-title">Beach Ride</span> — Available based on tide schedule. Check availability when booking.</span>
       </li>
       <li>
-        <span class="bullet">•</span>
-        <span><span class="inclusion-title">Romantic Sunset Tour</span> — Golden hour on horseback.</span>
-      </li>
-      <li>
-        <span class="bullet">•</span>
-        <span><span class="inclusion-title">Expert Local Guide</span> — Safety briefing &amp; guidance throughout.</span>
+        <span class="bullet">🌅</span>
+        <span><span class="inclusion-title">Sunset Ride</span> — Daily at 4:00 PM on dates when tide allows beach access.</span>
       </li>
     </ul>
+  </div>
+
+  <div class="nature-photo">
+    <img src="Experiences/Horse-1.jpg" alt="Horse Ride">
+  </div>
+  <div class="nature-photo">
+    <img src="Experiences/Horse-2.jpg" alt="Horse Ride">
+  </div>
+  <div class="nature-photo">
+    <img src="Experiences/Horse-3.jpg" alt="Horse Ride">
+  </div>
+  <div class="nature-photo">
+    <img src="Experiences/Horse-4.jpg" alt="Horse Ride">
+  </div>
+  <div class="nature-photo">
+    <img src="Experiences/Horse-5.jpg" alt="Horse Ride">
+  </div>
+  <div class="nature-photo">
+    <img src="Experiences/Horse-6.jpg" alt="Horse Ride">
+  </div>
+  <div class="nature-photo">
+    <img src="Experiences/Horse-7.jpg" alt="Horse Ride">
+  </div>
+  <div class="nature-photo">
+    <img src="Experiences/Horse-8.jpg" alt="Horse Ride">
   </div>
 
   <div class="section">
     <div class="section-label">Essential Gear</div>
     <div class="gear-grid">
-      <span class="gear-tag">👟 Closed Shoes</span>
-      <span class="gear-tag">👖 Long Pants</span>
-      <span class="gear-tag">🧴 Sunscreen</span>
       <span class="gear-tag">💧 Water</span>
+      <span class="gear-tag">👖 Long Pants (mandatory)</span>
+      <span class="gear-tag">👟 Closed-toe Shoes — no sandals or Crocs</span>
+      <span class="gear-tag">🧴 Sunscreen</span>
+      <span class="gear-tag">🦟 Insect Repellent</span>
     </div>
   </div>
 
   <div class="note-box" style="margin-bottom: 28px;">
-    🐴 Choose your adventure — beach gallop, jungle trail, or romantic sunset ride.
+    <div class="note-box-header">Before the tour</div>
+    <ul>
+      <li>• No large bags or backpacks allowed.</li>
+      <li>• Avoid loose clothing, ponchos, or scarves — can frighten the horses.</li>
+      <li>• Arrive 20 minutes early for registration and instructions.</li>
+    </ul>
+    <div class="note-box-header">Safety</div>
+    <ul>
+      <li>• Maximum weight: 230 lbs / 104 kg.</li>
+      <li>• No alcohol or drugs permitted.</li>
+      <li>• Inform us in advance of back problems, recent surgery, pregnancy, or severe fear of horses.</li>
+    </ul>
+    <div class="note-box-header">During the tour</div>
+    <ul>
+      <li>• Guides may adjust pace or separate groups based on horse behavior.</li>
+      <li>• Phones and personal belongings are your own responsibility.</li>
+      <li>• Tour proceeds rain or shine except in extreme conditions.</li>
+    </ul>
+    <div class="note-box-header">Important</div>
+    <ul>
+      <li>• Late arrivals may miss the tour without a refund — tour departs promptly.</li>
+    </ul>
   </div>
 
   <div class="pricing-footer">
     <div class="pricing-row">
       <div class="price-block">
         <div class="price-label">Per Person</div>
-        <div class="price-amount">$65</div>
+        <div class="price-amount">$70</div>
       </div>
     </div>
     <div class="contact-row">

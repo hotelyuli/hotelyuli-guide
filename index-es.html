@@ -427,6 +427,21 @@
     .emerg-row:last-child { border-bottom: none; }
     .emerg-name { font-size: 0.88rem; color: var(--text-muted); }
     .emerg-num { font-family: monospace; font-size: 15px; font-weight: 500; letter-spacing: 0.05em; color: #4D333E; text-decoration: none; }
+
+    .transport-card {
+      display: flex; align-items: center; gap: 12px;
+      background: white; border: 0.5px solid #e8ddd8;
+      border-radius: 12px; padding: 14px; margin-top: 16px;
+    }
+    .transport-icon { font-size: 26px; flex-shrink: 0; }
+    .transport-info { flex: 1; }
+    .transport-title { font-size: 14px; font-weight: 600; color: #4D333E; margin-bottom: 3px; }
+    .transport-detail { font-size: 12px; color: #888; }
+    .transport-btn {
+      background: #C97B77; color: white; border-radius: 8px;
+      padding: 8px 14px; font-size: 13px; font-weight: 500;
+      text-decoration: none; white-space: nowrap; flex-shrink: 0;
+    }
   </style>
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -1566,6 +1581,16 @@
           <div style="font-size:11px;color:#888;margin-bottom:6px;">WhatsApp</div>
           <a href="https://wa.me/50683031250" target="_blank" style="color:#C97B77;font-weight:500;font-size:13px;text-decoration:none;">+506 8303-1250</a>
         </div>
+      </div>
+
+      <!-- ALQUILER DE AUTO -->
+      <div class="transport-card">
+        <div class="transport-icon">🚗</div>
+        <div class="transport-info">
+          <div class="transport-title">Alquiler de Auto</div>
+          <div class="transport-detail">Descuento exclusivo Hotel Yuli con Hertz Costa Rica</div>
+        </div>
+        <a href="https://hertz.cr/rent/1520" target="_blank" class="transport-btn">Reservar →</a>
       </div>
 
     </div>
